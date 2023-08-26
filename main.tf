@@ -1,18 +1,21 @@
+terraform {
+  backend "s3" {
+    bucket = "my-terraform-state-bucket12345" 
+    key = "myproject.tfstate"
+    region = "us-east-1"
+    encrypt = true
+  }
+}
+
+
+
+
+
 provider "aws" {
   region = "us-east-1"
 }
 
-/*
-resource "aws_vpc" "example" {
-  cidr_block = "10.0.0.0/16"
-}
 
-resource "aws_subnet" "example" {
-  vpc_id     = aws_vpc.example.id
-  cidr_block = "10.0.1.0/24"
-}
-
-*/
 
 resource "aws_elastic_beanstalk_application" "elasticapp" {
   name = "myapp"
@@ -94,3 +97,4 @@ resource "aws_elastic_beanstalk_environment" "beanstalkappenv" {
     value     = "enhanced"
   }
 }
+
