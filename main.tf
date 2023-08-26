@@ -18,9 +18,8 @@ provider "aws" {
 
 
 resource "aws_elastic_beanstalk_application" "elasticapp" {
-  name = "myapp"
+ name = "myapp-unique1234"
 }
-
 
 resource "aws_iam_role" "elasticbeanstalk_ec2_role" {
   name = "aws-elasticbeanstalk-ec2-role"
